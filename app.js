@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = 'c4a63328f75142b0830b43a14c68b9eb'; // Your client id
 var client_secret = 'e9379a82c4fe4b2f81d8dcc78b90d8c9'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'https://umnmashuptest.herokuapp.com/redirect'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
