@@ -13,6 +13,9 @@ function submit(){
   song.artist = document.getElementById("artist").value; 
   song.albumImage = "NONE";
 
+  document.getElementById("songTitle").value="";
+  document.getElementById("artist").value="";
+
   var url = getMusixMatchURL(song.name, song.artist);
 
   //Make JSONP call
