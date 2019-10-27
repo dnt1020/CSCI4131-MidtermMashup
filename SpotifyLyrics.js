@@ -168,10 +168,11 @@ else {
           image.src = response.images[0].url;
 
 
-          var user_info = name + "<br>" + image;
+          var user_info = name + "<br>";
 
           document.getElementById('user').innerHTML = user_info;
 
+          document.getElementById('user').appendChild(image);
 
           $('#login').hide();
           $('#loggedin').show();
