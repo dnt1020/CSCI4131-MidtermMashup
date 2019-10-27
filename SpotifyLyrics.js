@@ -163,16 +163,17 @@ else {
         success: function(response) {
 
           var name = response.display_name;
-          console.log(typeof response.images[0].url);
-          var image = document.createElement("img");
-          image.src = response.images[0].url;
-
-
           var user_info = name + "<br>";
 
           document.getElementById('user').innerHTML = user_info;
+          
+          var prof_img = response.images;
+          if (prof_img[0] != null) {
+            var image = document.createElement("img");
+            image.src = response.images[0].url;
+            document.getElementById('user').appendChild(image);
+          }
 
-          document.getElementById('user').appendChild(image);
 
           $('#login').hide();
           $('#loggedin').show();
