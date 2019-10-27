@@ -15,6 +15,13 @@ var cookieParser = require('cookie-parser');
 
 var client_id = 'c4a63328f75142b0830b43a14c68b9eb'; // Your client id
 var client_secret = 'e9379a82c4fe4b2f81d8dcc78b90d8c9'; // Your secret
+
+var redirect_uri = 'https://serene-castle-31627.herokuapp.com/callback';
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8888;
+}
+/*
 var redirect_uri = 'http://localhost:'; // Your redirect uri
 
 let port = process.env.PORT;
@@ -23,7 +30,7 @@ if (port == null || port == "") {
 }
 
 redirect_uri = redirect_uri + port + '/callback';
-
+*/
 
 /**
  * Generates a random string containing numbers and letters
