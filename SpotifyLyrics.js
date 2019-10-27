@@ -164,9 +164,9 @@ else {
 
           var name = response.display_name;
         //  console.log(typeof response.images[0]);
-        //  var image = response.images.0.url;
+          var image = response.images.0.url;
 
-          var user_info = name + "<br>";
+          var user_info = name + "<br>" + image;
 
           document.getElementById('user').innerHTML = user_info;
 
