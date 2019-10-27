@@ -10,7 +10,7 @@ var song = {
 
 function submit(){
   song.name = document.getElementById("songTitle").value;
-  song.artist = document.getElementById("artist").value; 
+  song.artist = document.getElementById("artist").value;
   song.albumImage = "NONE";
 
   document.getElementById("songTitle").value="";
@@ -54,7 +54,7 @@ function getTrackCallback(data){
 
 function getLyricsCallback(data){
     song.lyrics = data.message.body.lyrics.lyrics_body;
-    console.log(song.lyrics);   
+    console.log(song.lyrics);
 
     //Building of Song Info Divider
     var oldSongElement = document.getElementById("songInfo");
@@ -65,7 +65,7 @@ function getLyricsCallback(data){
       image.id = "albumArt";
       image.src = song.albumImage;
       songElement.appendChild(image);
-    }    
+    }
 
     var name = document.createElement("h1");
     name.id = "name";
@@ -151,7 +151,7 @@ var access_token = params.access_token,
 
 if (error) {
   alert('There was an error during the authentication');
-} 
+}
 else {
   if (access_token) {
 
@@ -161,6 +161,15 @@ else {
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
+
+          var name = response.display_name;
+        //  console.log(typeof response.images[0]);
+        //  var image = response.images.0.url;
+
+          var user_info = name + "<br>";
+
+          document.getElementById('user').innerHTML = user_info;
+
 
           $('#login').hide();
           $('#loggedin').show();
