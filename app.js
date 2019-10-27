@@ -21,6 +21,11 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8888;
 }
+
+if (port == 5000) {
+  redirect_uri = 'http://localhost:5000/callback';
+}
+
 /*
 var redirect_uri = 'http://localhost:'; // Your redirect uri
 
