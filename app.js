@@ -18,6 +18,7 @@ var client_secret = 'e9379a82c4fe4b2f81d8dcc78b90d8c9'; // Your secret
 
 var redirect_uri = 'https://serene-castle-31627.herokuapp.com/callback';
 let port = process.env.PORT;
+console.log(port);
 if (port == null || port == "") {
   port = 8888;
 }
