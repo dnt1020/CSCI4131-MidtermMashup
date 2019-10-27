@@ -23,8 +23,8 @@ if (port == null || port == "") {
   port = 8888;
 }
 
-if (port == 5000) {
-  redirect_uri = 'http://localhost:5000/callback';
+if (port == 5000 || port == 8888) {
+  redirect_uri = 'http://localhost:'+ port + '/callback';
 }
 
 

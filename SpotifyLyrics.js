@@ -163,10 +163,10 @@ else {
         success: function(response) {
 
           var name = response.display_name;
-        //  console.log(typeof response.images[0]);
-          var image = response.images.0.url;
+          console.log(typeof response.images[0]);
+        //  var image = response.images[0].url;
 
-          var user_info = name + "<br>" + image;
+          var user_info = name + "<br>"; //+ image;
 
           document.getElementById('user').innerHTML = user_info;
 
