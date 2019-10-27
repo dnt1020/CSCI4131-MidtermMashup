@@ -26,16 +26,6 @@ if (port == 5000) {
   redirect_uri = 'http://localhost:5000/callback';
 }
 
-/*
-var redirect_uri = 'http://localhost:'; // Your redirect uri
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8888;
-}
-
-redirect_uri = redirect_uri + port + '/callback';
-*/
 
 /**
  * Generates a random string containing numbers and letters
