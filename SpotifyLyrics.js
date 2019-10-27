@@ -82,6 +82,16 @@ function getLyricsCallback(data){
     artist.innerHTML = "By " + song.artist;
     songElement.appendChild(artist);
 
+    if (song.lyrics == ""){
+      var noLyrics = document.createElement("h2");
+      noLyrics.id = "noLyrics";
+      noLyrics.innerHTML = "No Lyrics Found";
+      songElement.appendChild(noLyrics);
+
+      var buttonHTML = "<button id=\"fllLyricButton\" onclick=\"window.open('" + song.musixMatchLink + "', '_blank')\">Link to Musix Match</button>";
+      songElement.innerHTML += buttonHTML;
+    }
+
     var lyrics = document.createElement("p");
     lyrics.id = "songLyrics"
     lyrics.innerHTML = song.lyrics.replace(/\n/g, "<br>");
