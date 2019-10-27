@@ -1,0 +1,59 @@
+#login, #loggedin {
+  display: none;
+}
+/* will want to change this since just took w3school's example */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+body {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family:Lucida,Helvetica,sans-serif;
+}
+
+div{
+  padding: 5px;
+  border-radius:12px;
+  border-width:1.5px;
+  border-style:solid;
+}
+
+#albumArt{
+  width: 200;
+  height: 200;
+}
+
+#fullLyricButton{
+  padding: 5px;
+}
+
+#song{
+ 
+}
+
+#artist{
+ 
+}
+
+#songInfo{
+  
+}
+
+#currentlyPlaying{
+
+}
+
+#album{
+
+}

@@ -1,0 +1,47 @@
+
+<html>
+  <head>
+    <title>API Mashup</title>
+    <link rel="stylesheet" type="text/css" href="SpotifyLyrics.css" />
+  </head>
+
+  <body>
+    <div id="header">
+      <h1 id="mainHeader">Spotify Music Lyrics Finder</h1>
+      <h2 id="subtitle">with Help from <a href="https://developer.spotify.com/documentation/web-api/"> Spotify API</a> and <a href="https://developer.musixmatch.com/"> MusixMatch API</a></h2>
+    </div>
+    <div class="container">
+      <div id="login">
+        <a href="/login" class="button">Log in with Spotify</a>
+      </div>
+      <div>
+          <label for="song">Song Title</label>
+          <input type="text" id="songTitle"> 
+      </div>
+      <div>
+          <label for="artist">Artist</label>
+          <input type="text" id="artist"> 
+      </div>
+      <button class="button" onclick="submit()">Submit</button>
+      <div id="loggedin">
+        <div id="user">
+            USER PROFILE PICTURE AND NAME HERE
+        </div>
+        <button class="button" onclick="getCurrentSong()">Get Currently Playing on Spotify Song</button>
+      </div>
+      <div id="songInfo">
+        Click Button to Get Song
+      </div>
+    </div>
+
+    <div id="footer">
+      <h5>Built by Moira Southern and Dat Nguyen at University of Minnesota - Twin Cities CSCI 4131 Fall 2019</h5>
+    </div>
+
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="SpotifyLyrics.js"></script>
+
+  </body>
+</html>
