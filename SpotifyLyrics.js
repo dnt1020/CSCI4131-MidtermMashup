@@ -53,9 +53,6 @@ function getTrackCallback(data){
 }
 
 function getLyricsCallback(data){
-  song.lyrics = data.message.body.lyrics.lyrics_body;
-  console.log(song.lyrics);
-
   //Building of Song Info Divider
   var oldSongElement = document.getElementById("songInfo");
   var songElement = document.createElement("div");
@@ -82,7 +79,8 @@ function getLyricsCallback(data){
   artist.innerHTML = "By " + song.artist;
   songElement.appendChild(artist);
 
-  if (song.lyrics == ""){
+  if(data.message.header.status_code!=200 || data.message.body.lyrics.lyrics_body=="")
+  {
     var noLyrics = document.createElement("h2");
     noLyrics.id = "noLyrics";
     noLyrics.innerHTML = "No Lyrics Found";
@@ -90,7 +88,13 @@ function getLyricsCallback(data){
 
     var buttonHTML = "<button id=\"fllLyricButton\" onclick=\"window.open('" + song.musixMatchLink + "', '_blank')\">Link to Musix Match</button>";
     songElement.innerHTML += buttonHTML;
+    songElement.id="songInfo";
+    oldSongElement.parentNode.replaceChild(songElement, oldSongElement);
+    return;
   }
+
+  song.lyrics = data.message.body.lyrics.lyrics_body;
+  console.log(song.lyrics);
 
   var lyrics = document.createElement("p");
   lyrics.id = "songLyrics"
