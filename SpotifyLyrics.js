@@ -125,7 +125,7 @@ function getLyricsURL(id){
 
 // SONG PART
 function currentlyPlayingCallback(response){
-  if(!response.is_playing){
+  if(response == null || !response.is_playing){
     var oldSongElement = document.getElementById("songInfo");
     var songElement = document.createElement("h1");
     songElement.innerHTML = "No Currently Playing Song";
@@ -169,7 +169,7 @@ function loginCallback(response){
   var spotifyLinkHTML = "<br><dt><a href=\"" + spotifyLink  + "\" target=\"_blank\">User Profile on Spotify</a></dt>";
   userInfoElement.innerHTML += spotifyLinkHTML;
 
-  userElement.appendChild(userInfoElement);    
+  userElement.appendChild(userInfoElement);
 }
 
 /**
@@ -205,7 +205,7 @@ else {
     });
     $('#login').hide();
     $('#loggedin').show();
-  } 
+  }
   else {
     // render initial screen
     $('#login').show();
