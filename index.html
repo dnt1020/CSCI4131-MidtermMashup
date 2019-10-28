@@ -4,37 +4,49 @@
     <link rel="stylesheet" type="text/css" href="SpotifyLyrics.css" />
   </head>
 
-  <body>
-    <div id="header">
-      <h1 id="mainHeader">Spotify Music Lyrics Finder</h1>
-      <h2 id="subtitle">with Help from <a href="https://developer.spotify.com/documentation/web-api/"> Spotify API</a> and <a href="https://developer.musixmatch.com/"> MusixMatch API</a></h2>
+  <body background="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80">
+    <div id="top">
+      <h1 class="title" id="spotifyHeader"><a href="https://developer.spotify.com/documentation/web-api/" target="_blank">Music</a></h1>
+      <h1 class="title" id="musicHeader"><a href="https://developer.musixmatch.com/" target="_blank">Lyrics</a></h1>
+      <h1 class="title" id="finderHeader">Finder</h1>
     </div>
+
     <div class="container">
-      <div id="login">
-        <a href="/login" class="button">Log in with Spotify</a>
-      </div>
-      <div>
+      <div id="userEnter">
+        <br><br><br><br>
+        <div>
           <label for="song">Song Title</label>
           <input type="text" id="songTitle">
-      </div>
-      <div>
-          <label for="artist">Artist</label>
-          <input type="text" id="artist">
-      </div>
-      <button class="button" onclick="submit()">Submit</button>
-      <div id="loggedin">
-        <div id="user">
-            USER PROFILE PICTURE AND NAME HERE
         </div>
-        <button class="button" onclick="getCurrentSong()">Get Currently Playing on Spotify Song</button>
+        <div>
+            <label for="artist">Artist</label>
+            <input type="text" id="artist">
+        </div>
+        <button class="button" onclick="submit()">Submit</button>
       </div>
+
+      <div id="login">
+        <a href="/login" class="spotifyButton">Log in with Spotify</a>
+      </div>
+      <div id="loggedin">
+        <div id="spotify">
+          <div id="user"></div>
+          <br>
+          <button class="spotifyButton" onclick="getCurrentSong()">Get Currently Playing on Spotify Song</button>
+        </div>
+      </div>
+
       <div id="songInfo">
         Click Button to Get Song
       </div>
     </div>
 
     <div id="footer">
-      <h5>Built by Moira Southern and Dat Nguyen at University of Minnesota - Twin Cities CSCI 4131 Fall 2019</h5>
+      <h5>
+          Built by Moira Southern and Dat Nguyen at University of Minnesota - Twin Cities for CSCI 4131 Fall 2019
+          <br>
+          <a href="https://github.com/dnt1020/CSCI4131-MidtermMashup">Link to Github Repository</a>
+      </h5>
     </div>
 
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
