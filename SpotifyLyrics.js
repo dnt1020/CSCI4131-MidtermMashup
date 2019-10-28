@@ -47,7 +47,6 @@ function getTrackCallback(data){
   song.musixMatchTrackID = data.message.body.track.track_id;
   song.musixMatchLink = data.message.body.track.track_share_url;
   song.album = data.message.body.track.album_name;
-  console.log(song.musixMatchLink);
   var url = getLyricsURL(song.musixMatchTrackID);
   callScript(url);
 }
@@ -94,7 +93,6 @@ function getLyricsCallback(data){
   }
 
   song.lyrics = data.message.body.lyrics.lyrics_body;
-  console.log(song.lyrics);
 
   var lyrics = document.createElement("p");
   lyrics.id = "songLyrics"
@@ -137,15 +135,12 @@ function currentlyPlayingCallback(response){
   song.name = response.item.name;
   song.artist = response.item.artists[0].name;
   song.albumImage = response.item.album.images[0].url;
-  console.log("artist: " + song.artist);
-  console.log("song: " + song.name);
   var url = getMusixMatchURL(song.name, song.artist);
   callScript(url);
 }
 
 function loginCallback(response){
   userElement = document.getElementById('user');
-  console.log(response);
   var image = response.images;
   if (image[0] != null) {
     var imageElement = document.createElement("img");

@@ -18,7 +18,6 @@ var client_secret = 'e9379a82c4fe4b2f81d8dcc78b90d8c9'; // Your secret
 
 var redirect_uri = 'https://serene-castle-31627.herokuapp.com/callback';
 let port = process.env.PORT;
-console.log(port);
 if (port == null || port == "") {
   port = 8888;
 }
@@ -111,7 +110,6 @@ app.get('/callback', function(req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-//          console.log(body);
         });
 
         // we can also pass the token to the browser to make requests from there
@@ -130,5 +128,4 @@ app.get('/callback', function(req, res) {
   }
 });
 
-console.log('Listening on ' + port);
 app.listen(port);
