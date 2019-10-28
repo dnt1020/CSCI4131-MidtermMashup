@@ -36,7 +36,7 @@ function getCurrentSong(){
 function getTrackCallback(data){
   if(data.message.header.status_code != 200){
     var oldSongElement = document.getElementById("songInfo");
-    var songElement = document.createElement("div");
+    var songElement = document.createElement("h1");
     songElement.innerHTML = "Error in Finding Song - Check Name and Artist";
     songElement.id = "songInfo";
     oldSongElement.parentNode.replaceChild(songElement, oldSongElement);
@@ -81,7 +81,7 @@ function getLyricsCallback(data){
 
   if(data.message.header.status_code!=200 || data.message.body.lyrics.lyrics_body=="")
   {
-    var noLyrics = document.createElement("h2");
+    var noLyrics = document.createElement("h1");
     noLyrics.id = "noLyrics";
     noLyrics.innerHTML = "No Lyrics Found";
     songElement.appendChild(noLyrics);
@@ -125,6 +125,15 @@ function getLyricsURL(id){
 
 // SONG PART
 function currentlyPlayingCallback(response){
+  if(!response.is_playing){
+    var oldSongElement = document.getElementById("songInfo");
+    var songElement = document.createElement("h1");
+    songElement.innerHTML = "No Currently Playing Song";
+    songElement.id="songInfo";
+    oldSongElement.parentNode.replaceChild(songElement, oldSongElement);
+    return;
+  }
+
   song.name = response.item.name;
   song.artist = response.item.artists[0].name;
   song.albumImage = response.item.album.images[0].url;
